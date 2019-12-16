@@ -1,0 +1,32 @@
+﻿@model List<BoxShop.Models.Product>
+
+@{
+    ViewBag.Title = "products";
+
+
+}
+
+<input type="hidden" name="cart" id="hiddenCart" />
+
+@foreach (var item in Model)
+{
+    <div class="card col-md-3 col-sm-6">
+        <div id="@item.Id" class="addToCart">
+
+
+            <h2>@item.Name</h2>
+             
+            <img src="@item.ImageUrl" class="imageContainer img" />
+
+         @* @item.Description
+
+            @item.Price
+         *@
+
+
+       </div>
+ </div>
+   
+}
+
+<div class="clearfix"></div>

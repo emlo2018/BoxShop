@@ -1,0 +1,30 @@
+﻿@model List<BoxShop.Models.CartViewModel>
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h2>Cart</h2>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <div>
+                @item.Product.Name
+            </div>
+            <div>
+                @item.Product.Price
+            </div>
+            <div>
+                @item.Amount
+            </div>
+           
+        </li>
+    }
+</ul>
+
+<form method="post" action="/Home/CreateOrder">
+    <input type="hidden" name="cart" id="hiddenCart" />
+
+    <button type="submit" class="btn btn-default">Buy</button>
+</form>

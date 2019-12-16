@@ -1,0 +1,45 @@
+﻿@model List<BoxShop.Models.ProductType>
+
+@{
+    ViewBag.Title = "productbycategory";
+    
+
+}
+
+<div
+   
+     class="jumbotron">
+    <h1 style="color: darkblue"
+     > GIFTBOX </h1>
+   
+</div>
+
+
+@foreach (var item in Model)
+{
+    <div class="card col-md-3 col-sm-6">
+        <div>
+             
+
+            <a href="/home/productbycategory?Id=@item.ID"><h2>@item.Name</h2></a>
+
+            <div class="productContainer" id="@item.ID">
+                <div class="title">
+                    @item.Name
+                </div>
+               
+                </div>
+                <img src="@item.ImageUrl" class="imageContainer img" />
+                <div class="about">
+                   
+                </div>
+
+               
+
+            </div>
+       
+        </div>
+       
+}
+
+<div class="clearfix"></div>
